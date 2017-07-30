@@ -4,17 +4,17 @@
 		<Courses>
 			<CourseFolder Name="Courses">
 				<CourseNameRef>
-					<Id>Birkholzer Chaussee – Blumberg - Birkholz Loop from Senefelderplatz</Id>
+					<Id>Birkholzer Chaussee</Id>
 				</CourseNameRef>
 			</CourseFolder>
 		</Courses>
 	</Folders>
 	<Courses>
 		<Course>
-			<Name>Birkholzer Chaussee – Blumberg - Birkholz Loop from Senefelderplatz</Name>
+			<Name>Birkholzer Chaussee</Name>
 			<Lap>
-				<TotalTimeSeconds>5966.0</TotalTimeSeconds>
-				<DistanceMeters>39202.8664214877</DistanceMeters>
+				<TotalTimeSeconds>5966</TotalTimeSeconds>
+				<DistanceMeters>39202.8</DistanceMeters>
 				<BeginPosition>
 					<LatitudeDegrees>52.53289732963743</LatitudeDegrees>
 					<LongitudeDegrees>13.412878278961132</LongitudeDegrees>

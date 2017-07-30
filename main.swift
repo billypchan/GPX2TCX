@@ -154,7 +154,7 @@ let endTime = xmlGPX?.root["trk"]["trkseg"]["trkpt"].last?["time"].value
 let beginDate = beginTime?.dateFromISO8601
 let totalTimeSeconds = endTime?.dateFromISO8601?.timeIntervalSince(beginDate!)
 
-lap["TotalTimeSeconds"].value = String(describing: totalTimeSeconds!)
+lap["TotalTimeSeconds"].value = String(describing: Int(totalTimeSeconds!))
 
 var lastLat = Double(0)
 var lastLog = Double(0)
