@@ -45,6 +45,16 @@ extension String {
     }
 }
 
+
+extension Double {
+    func string(fractionDigits:Int) -> String {
+        let formatter = NumberFormatter()
+        formatter.minimumFractionDigits = fractionDigits
+        formatter.maximumFractionDigits = fractionDigits
+        return formatter.string(from: NSNumber(value: self)) ?? "\(self)"
+    }
+}
+
 func distanceFormCoordinates(lat0: Double, log0: Double, lat1: Double, log1: Double) -> Double{
     let coordinate0 = CLLocation(latitude: lat0, longitude: log0)
     let coordinate1 = CLLocation(latitude: lat1, longitude: log1)
@@ -130,7 +140,12 @@ let xmlTCXoutput = AEXMLDocument()
 let trainingCenterDatabase = xmlTCXoutput.addChild(name: (xmlTCXtemplate?.root.name)!, attributes:(xmlTCXtemplate?.root.attributes)!)
 
 let folders = trainingCenterDatabase.addChild(foldersTemplate!)
-let trkName = xmlGPX?.root["trk"]["name"].value
+var trkName = xmlGPX?.root["trk"]["name"].value
+/** Hack: Germin 500 does not like name.count > 15  */
+if (trkName?.characters.count)! > 15 {
+    let index = trkName?.index((trkName?.startIndex)!, offsetBy: 15)
+    trkName = trkName?.substring(to: index!)
+}
 folders["Courses"]["CourseFolder"]["CourseNameRef"]["Id"].value = trkName
 
 let course = trainingCenterDatabase.addChild(name:"Courses").addChild(name:"Course")
@@ -186,7 +201,7 @@ for trkpt in (xmlGPX?.root["trk"]["trkseg"]["trkpt"].all)! {
     lastLog = log
 }
 
-lap["DistanceMeters"].value = String(totalDistance)
+lap["DistanceMeters"].value = totalDistance.string(fractionDigits:1)
 
 //writing
 do {

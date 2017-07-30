@@ -4,17 +4,17 @@
 		<Courses>
 			<CourseFolder Name="Courses">
 				<CourseNameRef>
-					<Id>Birkholzer Chaussee</Id>
+					<Id>Birkholzer Chau</Id>
 				</CourseNameRef>
 			</CourseFolder>
 		</Courses>
 	</Folders>
 	<Courses>
 		<Course>
-			<Name>Birkholzer Chaussee</Name>
+			<Name>Birkholzer Chau</Name>
 			<Lap>
 				<TotalTimeSeconds>5966</TotalTimeSeconds>
-				<DistanceMeters>39202.8</DistanceMeters>
+				<DistanceMeters>39202.9</DistanceMeters>
 				<BeginPosition>
 					<LatitudeDegrees>52.53289732963743</LatitudeDegrees>
 					<LongitudeDegrees>13.412878278961132</LongitudeDegrees>
