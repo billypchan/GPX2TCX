@@ -82,7 +82,6 @@ func readXML(_ fullPath: String) -> AEXMLDocument?{
     
     
     do {
-        //        print("xmlToParse")
         let xmlDoc = try AEXMLDocument(xml: xmlToParse)
         return xmlDoc
     }
@@ -92,8 +91,6 @@ func readXML(_ fullPath: String) -> AEXMLDocument?{
     
     return nil
 }
-
-//print(CommandLine.arguments)
 
 
 if CommandLine.arguments.count < 2 {
@@ -147,18 +144,10 @@ trackpointTemplate?["Position"]["LongitudeDegrees"].value = "0"
 trackpointTemplate?["AltitudeMeters"].value = "0"
 trackpointTemplate?["DistanceMeters"].value = "0"
 
-//lapTemplate?["TotalTimeSeconds"].removeFromParent()
-//lapTemplate?["DistanceMeters"].removeFromParent()
-
 lapTemplate?["BeginPosition"]["LatitudeDegrees"].value = "0"
 lapTemplate?["BeginPosition"]["LongitudeDegrees"].value = "0"
 lapTemplate?["EndPosition"]["LatitudeDegrees"].value = "0"
 lapTemplate?["EndPosition"]["LongitudeDegrees"].value = "0"
-
-//folders?["CourseFolder"]["CourseNameRef"]["Id"].value = nil
-//print(folders?.xml)
-//var id = xmlTCXtemplate?.root["Folders"]["CourseFolder"]["CourseNameRef"]["Id"]
-//print(id?.xml)
 
 // create XML Document
 let xmlTCXoutput = AEXMLDocument()
