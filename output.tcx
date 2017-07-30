@@ -13,6 +13,7 @@
 		<Course>
 			<Name>Birkholzer Chaussee – Blumberg - Birkholz Loop from Senefelderplatz</Name>
 			<Lap>
+				<TotalTimeSeconds>5966.0</TotalTimeSeconds>
 				<DistanceMeters>39202.8664214877</DistanceMeters>
 				<BeginPosition>
 					<LatitudeDegrees>52.53289732963743</LatitudeDegrees>

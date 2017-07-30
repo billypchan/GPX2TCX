@@ -23,6 +23,28 @@ extension AEXMLElement {
     }
 }
 
+extension Formatter {
+    static let iso8601: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .iso8601)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXXXX"
+        return formatter
+    }()
+}
+extension Date {
+    var iso8601: String {
+        return Formatter.iso8601.string(from: self)
+    }
+}
+
+extension String {
+    var dateFromISO8601: Date? {
+        return Formatter.iso8601.date(from: self)   // "Mar 22, 2017, 10:22 AM"
+    }
+}
+
 func distanceFormCoordinates(lat0: Double, log0: Double, lat1: Double, log1: Double) -> Double{
     let coordinate0 = CLLocation(latitude: lat0, longitude: log0)
     let coordinate1 = CLLocation(latitude: lat1, longitude: log1)
@@ -86,12 +108,7 @@ trackpointTemplate?["Position"]["LongitudeDegrees"].value = "0"
 trackpointTemplate?["AltitudeMeters"].value = "0"
 trackpointTemplate?["DistanceMeters"].value = "0"
 
-
-//print(trackpointTemplate?.xml)
-
-
-///FIXME: calc DistanceMeters/TotalTimeSeconds
-lapTemplate?["TotalTimeSeconds"].removeFromParent()
+//lapTemplate?["TotalTimeSeconds"].removeFromParent()
 //lapTemplate?["DistanceMeters"].removeFromParent()
 
 lapTemplate?["BeginPosition"]["LatitudeDegrees"].value = "0"
@@ -131,12 +148,20 @@ lap["BeginPosition"]["LongitudeDegrees"].value = beginPosition?["lon"]
 lap["EndPosition"]["LatitudeDegrees"].value = endPosition?["lat"]
 lap["EndPosition"]["LongitudeDegrees"].value = endPosition?["lon"]
 
+let beginTime = xmlGPX?.root["trk"]["trkseg"]["trkpt"].first?["time"].value
+let endTime = xmlGPX?.root["trk"]["trkseg"]["trkpt"].last?["time"].value
+
+let beginDate = beginTime?.dateFromISO8601
+let totalTimeSeconds = endTime?.dateFromISO8601?.timeIntervalSince(beginDate!)
+
+lap["TotalTimeSeconds"].value = String(describing: totalTimeSeconds!)
 
 var lastLat = Double(0)
 var lastLog = Double(0)
 var totalDistance = Double(-1)
 
 let track = course.addChild(name:"Track")
+
 for trkpt in (xmlGPX?.root["trk"]["trkseg"]["trkpt"].all)! {
     let trackPoint = track.addChild((trackpointTemplate?.copy())!)
     
