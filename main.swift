@@ -10,6 +10,7 @@ import Foundation
 import AEXML
 import CoreLocation
 
+///TODO: pull request
 extension AEXMLElement {
     func copy() -> AEXMLElement {
         let clone = AEXMLElement(name: self.name, attributes: self.attributes)
@@ -91,7 +92,7 @@ trackpointTemplate?["DistanceMeters"].value = "0"
 
 ///FIXME: calc DistanceMeters/TotalTimeSeconds
 lapTemplate?["TotalTimeSeconds"].removeFromParent()
-lapTemplate?["DistanceMeters"].removeFromParent()
+//lapTemplate?["DistanceMeters"].removeFromParent()
 
 lapTemplate?["BeginPosition"]["LatitudeDegrees"].value = "0"
 lapTemplate?["BeginPosition"]["LongitudeDegrees"].value = "0"
@@ -130,36 +131,37 @@ lap["BeginPosition"]["LongitudeDegrees"].value = beginPosition?["lon"]
 lap["EndPosition"]["LatitudeDegrees"].value = endPosition?["lat"]
 lap["EndPosition"]["LongitudeDegrees"].value = endPosition?["lon"]
 
+
 var lastLat = Double(0)
 var lastLog = Double(0)
 var totalDistance = Double(-1)
 
+let track = course.addChild(name:"Track")
 for trkpt in (xmlGPX?.root["trk"]["trkseg"]["trkpt"].all)! {
-    let track = course.addChild(name:"Track").addChild((trackpointTemplate?.copy())!)
+    let trackPoint = track.addChild((trackpointTemplate?.copy())!)
     
-    track["Time"].value = trkpt["time"].value
+    trackPoint["Time"].value = trkpt["time"].value
     let lat = Double(trkpt.attributes["lat"]!)!
     let log = Double(trkpt.attributes["lon"]!)!
     
-    track["Position"]["LatitudeDegrees"].value = trkpt.attributes["lat"]
-    track["Position"]["LongitudeDegrees"].value = trkpt.attributes["lon"]
-    track["AltitudeMeters"].value = trkpt["ele"].value
+    trackPoint["Position"]["LatitudeDegrees"].value = trkpt.attributes["lat"]
+    trackPoint["Position"]["LongitudeDegrees"].value = trkpt.attributes["lon"]
+    trackPoint["AltitudeMeters"].value = trkpt["ele"].value
     if totalDistance == -1 {
-        track["DistanceMeters"].value = "0"
+        trackPoint["DistanceMeters"].value = "0"
         totalDistance = 0
     }
     else {
         let distance = distanceFormCoordinates(lat0: lastLat, log0: lastLog, lat1: lat, log1: log)
         totalDistance += distance
-        track["DistanceMeters"].value = String(totalDistance)
+        trackPoint["DistanceMeters"].value = String(totalDistance)
     }
     
     lastLat = lat
     lastLog = log
 }
 
-// prints the same XML structure as original
-//print(xmlTCXoutput.xml)
+lap["DistanceMeters"].value = String(totalDistance)
 
 //writing
 do {
