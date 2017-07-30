@@ -55,6 +55,19 @@ foldersTemplate?["Courses"]["CourseFolder"]["CourseNameRef"]["Id"].value = nil
 var coursesTemplate = xmlTCXtemplate?.root["Courses"]
 var courseTemplate = coursesTemplate?["Course"].first
 var lapTemplate = courseTemplate?["Lap"].first
+var trackpointTemplate = courseTemplate?["Track"]["Trackpoint"].first
+
+trackpointTemplate?["Time"].value = "0"
+trackpointTemplate?["Position"]["LatitudeDegrees"].value = "0"
+trackpointTemplate?["Position"]["LongitudeDegrees"].value = "0"
+trackpointTemplate?["AltitudeMeters"].value = "0"
+trackpointTemplate?["DistanceMeters"].value = "0"
+///FIXME: calc DistanceMeters
+trackpointTemplate?["DistanceMeters"].removeFromParent()
+
+
+//print(trackpointTemplate?.xml)
+
 
 ///FIXME: calc DistanceMeters/TotalTimeSeconds
 lapTemplate?["TotalTimeSeconds"].removeFromParent()
@@ -64,8 +77,6 @@ lapTemplate?["BeginPosition"]["LatitudeDegrees"].value = "0"
 lapTemplate?["BeginPosition"]["LongitudeDegrees"].value = "0"
 lapTemplate?["EndPosition"]["LatitudeDegrees"].value = "0"
 lapTemplate?["EndPosition"]["LongitudeDegrees"].value = "0"
-
-print(lapTemplate?.xml)
 
 //folders?["CourseFolder"]["CourseNameRef"]["Id"].value = nil
 //print(folders?.xml)
@@ -84,7 +95,8 @@ let folders = trainingCenterDatabase.addChild(foldersTemplate!)
 let trkName = xmlGPX?.root["trk"]["name"].value
 folders["Courses"]["CourseFolder"]["CourseNameRef"]["Id"].value = trkName
 
-let lap = trainingCenterDatabase.addChild(name:"Courses").addChild(name:"Course").addChild(lapTemplate!)
+let course = trainingCenterDatabase.addChild(name:"Courses").addChild(name:"Course")
+let lap = course.addChild(lapTemplate!)
 
 let beginPosition = xmlGPX?.root["trk"]["trkseg"]["trkpt"].first?.attributes
 let endPosition = xmlGPX?.root["trk"]["trkseg"]["trkpt"].last?.attributes
@@ -94,6 +106,18 @@ lap["BeginPosition"]["LongitudeDegrees"].value = beginPosition?["lon"]
 lap["EndPosition"]["LatitudeDegrees"].value = endPosition?["lat"]
 lap["EndPosition"]["LongitudeDegrees"].value = endPosition?["lon"]
 
+
+for trkpt in (xmlGPX?.root["trk"]["trkseg"]["trkpt"].all)! {
+    let track = course.addChild(name:"Track").addChild(trackpointTemplate!)
+
+    track["Time"].value = trkpt["time"].value
+    track["Position"]["LatitudeDegrees"].value = trkpt.attributes["lat"]
+    track["Position"]["LongitudeDegrees"].value = trkpt.attributes["lon"]
+    track["AltitudeMeters"].value = trkpt["ele"].value
+//    track["DistanceMeters"].value = "0"
+
+//    break
+}
 
 // prints the same XML structure as original
 print(xmlTCXoutput.xml)
