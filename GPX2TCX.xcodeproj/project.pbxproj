@@ -7,67 +7,117 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		OBJ_26 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Document.swift */; };
-		OBJ_27 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Element.swift */; };
-		OBJ_28 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Error.swift */; };
-		OBJ_29 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Options.swift */; };
-		OBJ_30 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* Parser.swift */; };
-		OBJ_37 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
-		OBJ_39 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* AEXML.framework */; };
+		OBJ_39 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* Document.swift */; };
+		OBJ_40 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* Element.swift */; };
+		OBJ_41 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* Error.swift */; };
+		OBJ_42 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Options.swift */; };
+		OBJ_43 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* Parser.swift */; };
+		OBJ_50 /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Case.swift */; };
+		OBJ_51 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Context.swift */; };
+		OBJ_52 /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* Expectation.swift */; };
+		OBJ_53 /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Failure.swift */; };
+		OBJ_54 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* Global.swift */; };
+		OBJ_55 /* GlobalContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* GlobalContext.swift */; };
+		OBJ_56 /* Reporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* Reporter.swift */; };
+		OBJ_57 /* Reporters.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* Reporters.swift */; };
+		OBJ_64 /* PathKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* PathKit.swift */; };
+		OBJ_66 /* Spectre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Spectre.framework */; };
+		OBJ_73 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
+		OBJ_75 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* AEXML.framework */; };
+		OBJ_76 /* Spectre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Spectre.framework */; };
+		OBJ_77 /* PathKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* PathKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FEFFBDDA1F2DEB34006BFBC9 /* PBXContainerItemProxy */ = {
+		FEFFBDDE1F2E366A006BFBC9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_21;
+			remoteGlobalIDString = OBJ_45;
+			remoteInfo = Spectre;
+		};
+		FEFFBDDF1F2E366A006BFBC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_34;
 			remoteInfo = AEXML;
+		};
+		FEFFBDE01F2E366A006BFBC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_45;
+			remoteInfo = Spectre;
+		};
+		FEFFBDE11F2E366A006BFBC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_59;
+			remoteInfo = PathKit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FEFFBDDC1F2DEE21006BFBC9 /* –_Blumberg_-_Birkholz_Loop_from_Senefelderplatz.tcx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "–_Blumberg_-_Birkholz_Loop_from_Senefelderplatz.tcx"; sourceTree = "<group>"; };
-		FEFFBDDD1F2DEE21006BFBC9 /* 2017-07-28_20218653_birkholzer-chaussee-blumberg-birkholz-loop-from-senefelderplatz_export.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "2017-07-28_20218653_birkholzer-chaussee-blumberg-birkholz-loop-from-senefelderplatz_export.gpx"; sourceTree = "<group>"; };
-		OBJ_13 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
-		OBJ_14 /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
-		OBJ_15 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		OBJ_16 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
-		OBJ_17 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		OBJ_19 /* AEXML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_20 /* GPX2TCX */ = {isa = PBXFileReference; lastKnownFileType = text; path = GPX2TCX; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_13 /* PathKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathKit.swift; sourceTree = "<group>"; };
+		OBJ_15 /* Case.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case.swift; sourceTree = "<group>"; };
+		OBJ_16 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		OBJ_17 /* Expectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expectation.swift; sourceTree = "<group>"; };
+		OBJ_18 /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
+		OBJ_19 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		OBJ_20 /* GlobalContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalContext.swift; sourceTree = "<group>"; };
+		OBJ_21 /* Reporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reporter.swift; sourceTree = "<group>"; };
+		OBJ_22 /* Reporters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reporters.swift; sourceTree = "<group>"; };
+		OBJ_24 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		OBJ_25 /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		OBJ_26 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		OBJ_27 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		OBJ_28 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		OBJ_30 /* AEXML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_31 /* Spectre.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Spectre.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_32 /* PathKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PathKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_33 /* GPX2TCX */ = {isa = PBXFileReference; lastKnownFileType = text; path = GPX2TCX; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_31 /* Frameworks */ = {
+		OBJ_44 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_38 /* Frameworks */ = {
+		OBJ_58 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_39 /* AEXML.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_66 /* Spectre.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_75 /* AEXML.framework in Frameworks */,
+				OBJ_76 /* Spectre.framework in Frameworks */,
+				OBJ_77 /* PathKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FEFFBDDB1F2DEE0A006BFBC9 /* demoData */ = {
-			isa = PBXGroup;
-			children = (
-				FEFFBDDC1F2DEE21006BFBC9 /* –_Blumberg_-_Birkholz_Loop_from_Senefelderplatz.tcx */,
-				FEFFBDDD1F2DEE21006BFBC9 /* 2017-07-28_20218653_birkholzer-chaussee-blumberg-birkholz-loop-from-senefelderplatz_export.gpx */,
-			);
-			name = demoData;
-			sourceTree = "<group>";
-		};
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,29 +128,58 @@
 		OBJ_11 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_12 /* AEXML 4.1.0 */,
+				OBJ_12 /* PathKit 0.8.0 */,
+				OBJ_14 /* Spectre 0.7.2 */,
+				OBJ_23 /* AEXML 4.1.0 */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
 		};
-		OBJ_12 /* AEXML 4.1.0 */ = {
+		OBJ_12 /* PathKit 0.8.0 */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_13 /* Document.swift */,
-				OBJ_14 /* Element.swift */,
-				OBJ_15 /* Error.swift */,
-				OBJ_16 /* Options.swift */,
-				OBJ_17 /* Parser.swift */,
+				OBJ_13 /* PathKit.swift */,
+			);
+			name = "PathKit 0.8.0";
+			path = ".build/checkouts/PathKit--9185519632264250829/Sources";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_14 /* Spectre 0.7.2 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_15 /* Case.swift */,
+				OBJ_16 /* Context.swift */,
+				OBJ_17 /* Expectation.swift */,
+				OBJ_18 /* Failure.swift */,
+				OBJ_19 /* Global.swift */,
+				OBJ_20 /* GlobalContext.swift */,
+				OBJ_21 /* Reporter.swift */,
+				OBJ_22 /* Reporters.swift */,
+			);
+			name = "Spectre 0.7.2";
+			path = ".build/checkouts/Spectre.git--7655155069707042687/Sources";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_23 /* AEXML 4.1.0 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_24 /* Document.swift */,
+				OBJ_25 /* Element.swift */,
+				OBJ_26 /* Error.swift */,
+				OBJ_27 /* Options.swift */,
+				OBJ_28 /* Parser.swift */,
 			);
 			name = "AEXML 4.1.0";
 			path = ".build/checkouts/AEXML.git--1992474868199569405/Sources";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_18 /* Products */ = {
+		OBJ_29 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_19 /* AEXML.framework */,
-				OBJ_20 /* GPX2TCX */,
+				OBJ_30 /* AEXML.framework */,
+				OBJ_31 /* Spectre.framework */,
+				OBJ_32 /* PathKit.framework */,
+				OBJ_33 /* GPX2TCX */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -108,12 +187,11 @@
 		OBJ_5 /*  */ = {
 			isa = PBXGroup;
 			children = (
-				FEFFBDDB1F2DEE0A006BFBC9 /* demoData */,
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_10 /* Tests */,
 				OBJ_11 /* Dependencies */,
-				OBJ_18 /* Products */,
+				OBJ_29 /* Products */,
 			);
 			name = "";
 			sourceTree = "<group>";
@@ -137,12 +215,12 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		OBJ_21 /* AEXML */ = {
+		OBJ_34 /* AEXML */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_22 /* Build configuration list for PBXNativeTarget "AEXML" */;
+			buildConfigurationList = OBJ_35 /* Build configuration list for PBXNativeTarget "AEXML" */;
 			buildPhases = (
-				OBJ_25 /* Sources */,
-				OBJ_31 /* Frameworks */,
+				OBJ_38 /* Sources */,
+				OBJ_44 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -150,24 +228,59 @@
 			);
 			name = AEXML;
 			productName = AEXML;
-			productReference = OBJ_19 /* AEXML.framework */;
+			productReference = OBJ_30 /* AEXML.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		OBJ_32 /* GPX2TCX */ = {
+		OBJ_45 /* Spectre */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_33 /* Build configuration list for PBXNativeTarget "GPX2TCX" */;
+			buildConfigurationList = OBJ_46 /* Build configuration list for PBXNativeTarget "Spectre" */;
 			buildPhases = (
-				OBJ_36 /* Sources */,
-				OBJ_38 /* Frameworks */,
+				OBJ_49 /* Sources */,
+				OBJ_58 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_40 /* PBXTargetDependency */,
+			);
+			name = Spectre;
+			productName = Spectre;
+			productReference = OBJ_31 /* Spectre.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		OBJ_59 /* PathKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_60 /* Build configuration list for PBXNativeTarget "PathKit" */;
+			buildPhases = (
+				OBJ_63 /* Sources */,
+				OBJ_65 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_67 /* PBXTargetDependency */,
+			);
+			name = PathKit;
+			productName = PathKit;
+			productReference = OBJ_32 /* PathKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		OBJ_68 /* GPX2TCX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_69 /* Build configuration list for PBXNativeTarget "GPX2TCX" */;
+			buildPhases = (
+				OBJ_72 /* Sources */,
+				OBJ_74 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_78 /* PBXTargetDependency */,
+				OBJ_79 /* PBXTargetDependency */,
+				OBJ_80 /* PBXTargetDependency */,
 			);
 			name = GPX2TCX;
 			productName = GPX2TCX;
-			productReference = OBJ_20 /* GPX2TCX */;
+			productReference = OBJ_33 /* GPX2TCX */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -186,90 +299,88 @@
 				en,
 			);
 			mainGroup = OBJ_5 /*  */;
-			productRefGroup = OBJ_18 /* Products */;
+			productRefGroup = OBJ_29 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				OBJ_21 /* AEXML */,
-				OBJ_32 /* GPX2TCX */,
+				OBJ_34 /* AEXML */,
+				OBJ_45 /* Spectre */,
+				OBJ_59 /* PathKit */,
+				OBJ_68 /* GPX2TCX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_25 /* Sources */ = {
+		OBJ_38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_26 /* Document.swift in Sources */,
-				OBJ_27 /* Element.swift in Sources */,
-				OBJ_28 /* Error.swift in Sources */,
-				OBJ_29 /* Options.swift in Sources */,
-				OBJ_30 /* Parser.swift in Sources */,
+				OBJ_39 /* Document.swift in Sources */,
+				OBJ_40 /* Element.swift in Sources */,
+				OBJ_41 /* Error.swift in Sources */,
+				OBJ_42 /* Options.swift in Sources */,
+				OBJ_43 /* Parser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_36 /* Sources */ = {
+		OBJ_49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_37 /* main.swift in Sources */,
+				OBJ_50 /* Case.swift in Sources */,
+				OBJ_51 /* Context.swift in Sources */,
+				OBJ_52 /* Expectation.swift in Sources */,
+				OBJ_53 /* Failure.swift in Sources */,
+				OBJ_54 /* Global.swift in Sources */,
+				OBJ_55 /* GlobalContext.swift in Sources */,
+				OBJ_56 /* Reporter.swift in Sources */,
+				OBJ_57 /* Reporters.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_64 /* PathKit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_73 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_40 /* PBXTargetDependency */ = {
+		OBJ_67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_21 /* AEXML */;
-			targetProxy = FEFFBDDA1F2DEB34006BFBC9 /* PBXContainerItemProxy */;
+			target = OBJ_45 /* Spectre */;
+			targetProxy = FEFFBDDE1F2E366A006BFBC9 /* PBXContainerItemProxy */;
+		};
+		OBJ_78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_34 /* AEXML */;
+			targetProxy = FEFFBDDF1F2E366A006BFBC9 /* PBXContainerItemProxy */;
+		};
+		OBJ_79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_45 /* Spectre */;
+			targetProxy = FEFFBDE01F2E366A006BFBC9 /* PBXContainerItemProxy */;
+		};
+		OBJ_80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_59 /* PathKit */;
+			targetProxy = FEFFBDE11F2E366A006BFBC9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_23 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = GPX2TCX.xcodeproj/AEXML_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = AEXML;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				TARGET_NAME = AEXML;
-			};
-			name = Debug;
-		};
-		OBJ_24 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = GPX2TCX.xcodeproj/AEXML_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = AEXML;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				TARGET_NAME = AEXML;
-			};
-			name = Release;
-		};
 		OBJ_3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -293,39 +404,45 @@
 			};
 			name = Debug;
 		};
-		OBJ_34 /* Debug */ = {
+		OBJ_36 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = GPX2TCX.xcodeproj/GPX2TCX_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				INFOPLIST_FILE = GPX2TCX.xcodeproj/AEXML_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
-				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
-				TARGET_NAME = GPX2TCX;
+				PRODUCT_BUNDLE_IDENTIFIER = AEXML;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGET_NAME = AEXML;
 			};
 			name = Debug;
 		};
-		OBJ_35 /* Release */ = {
+		OBJ_37 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = GPX2TCX.xcodeproj/GPX2TCX_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				INFOPLIST_FILE = GPX2TCX.xcodeproj/AEXML_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
-				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
-				TARGET_NAME = GPX2TCX;
+				PRODUCT_BUNDLE_IDENTIFIER = AEXML;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGET_NAME = AEXML;
 			};
 			name = Release;
 		};
@@ -350,6 +467,126 @@
 			};
 			name = Release;
 		};
+		OBJ_47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = GPX2TCX.xcodeproj/Spectre_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Spectre;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGET_NAME = Spectre;
+			};
+			name = Debug;
+		};
+		OBJ_48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = GPX2TCX.xcodeproj/Spectre_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Spectre;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGET_NAME = Spectre;
+			};
+			name = Release;
+		};
+		OBJ_61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = GPX2TCX.xcodeproj/PathKit_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = PathKit;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGET_NAME = PathKit;
+			};
+			name = Debug;
+		};
+		OBJ_62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = GPX2TCX.xcodeproj/PathKit_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = PathKit;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGET_NAME = PathKit;
+			};
+			name = Release;
+		};
+		OBJ_70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = GPX2TCX.xcodeproj/GPX2TCX_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
+				TARGET_NAME = GPX2TCX;
+			};
+			name = Debug;
+		};
+		OBJ_71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = GPX2TCX.xcodeproj/GPX2TCX_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
+				TARGET_NAME = GPX2TCX;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -362,20 +599,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_22 /* Build configuration list for PBXNativeTarget "AEXML" */ = {
+		OBJ_35 /* Build configuration list for PBXNativeTarget "AEXML" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_23 /* Debug */,
-				OBJ_24 /* Release */,
+				OBJ_36 /* Debug */,
+				OBJ_37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_33 /* Build configuration list for PBXNativeTarget "GPX2TCX" */ = {
+		OBJ_46 /* Build configuration list for PBXNativeTarget "Spectre" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_34 /* Debug */,
-				OBJ_35 /* Release */,
+				OBJ_47 /* Debug */,
+				OBJ_48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_60 /* Build configuration list for PBXNativeTarget "PathKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_61 /* Debug */,
+				OBJ_62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_69 /* Build configuration list for PBXNativeTarget "GPX2TCX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_70 /* Debug */,
+				OBJ_71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

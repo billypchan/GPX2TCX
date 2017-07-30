@@ -9,6 +9,7 @@
 import Foundation
 import AEXML
 import CoreLocation
+import PathKit
 
 ///TODO: pull request
 extension AEXMLElement {
@@ -102,24 +103,30 @@ if CommandLine.arguments.count < 2 {
 
 let inputFile = CommandLine.arguments[1]
 
-let outputFile = inputFile.replacingOccurrences(of: ".gpx", with: "") + ".tcx"
-
 // Create a FileManager instance
 
 let fileManager = FileManager.default
 
 // Get current directory path
 
-let path = fileManager.currentDirectoryPath
-//print(path)
+let currentPath = fileManager.currentDirectoryPath
 
+let path = Path(inputFile)
+let outputFile = path.lastComponent.replacingOccurrences(of: ".gpx", with: "") + ".tcx"
 
-let fullPath = "file://" + path + "/" + inputFile
-print(fullPath)
+var fullPath = ""
 
-let fullPathTCXTemplate = "file:///Users/chanbill/Desktop/GPX2TCX/template.tcx"
-let fullPathTCXOutput = "file://" + path + "/" + outputFile
+if path.isRelative {
+    fullPath = "file://" + currentPath + "/" + inputFile
+}
+else {
+    fullPath = path.url.absoluteString
+}
 
+let fullPathTCXTemplate = "file://" + currentPath + "/" + "template.tcx"
+let fullPathTCXOutput = "file://" + currentPath + "/" + outputFile
+
+print(fullPathTCXOutput)
 
 
 let xmlGPX = readXML(fullPath)
