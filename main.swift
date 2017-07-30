@@ -46,20 +46,27 @@ let fullPathTCXTemplate = "file:///Users/chanbill/Desktop/GPX2TCX/template.tcx"
 let xmlGPX = readXML(fullPath)
 let xmlTCXtemplate = readXML(fullPathTCXTemplate)
 
-
-let name = xmlGPX?.root["trk"]["name"].value
-print(name)
-//xmlGPX.
-
-
-//xmlTCXtemplate?.root["Folders"]["Courses"]["CourseFolder"]["CourseNameRef"]["Id"].value = nil
 var foldersTemplate = xmlTCXtemplate?.root["Folders"]
 //let val = folders?["Courses"]["CourseFolder"]["CourseNameRef"]["Id"].last?.value
 //let val = folders?.xmlCompact
 
 foldersTemplate?["Courses"]["CourseFolder"]["CourseNameRef"]["Id"].value = nil
 
-//print(val)
+var coursesTemplate = xmlTCXtemplate?.root["Courses"]
+var courseTemplate = coursesTemplate?["Course"].first
+var lapTemplate = courseTemplate?["Lap"].first
+
+///FIXME: calc DistanceMeters/TotalTimeSeconds
+lapTemplate?["TotalTimeSeconds"].removeFromParent()
+lapTemplate?["DistanceMeters"].removeFromParent()
+
+lapTemplate?["BeginPosition"]["LatitudeDegrees"].value = "0"
+lapTemplate?["BeginPosition"]["LongitudeDegrees"].value = "0"
+lapTemplate?["EndPosition"]["LatitudeDegrees"].value = "0"
+lapTemplate?["EndPosition"]["LongitudeDegrees"].value = "0"
+
+print(lapTemplate?.xml)
+
 //folders?["CourseFolder"]["CourseNameRef"]["Id"].value = nil
 //print(folders?.xml)
 //var id = xmlTCXtemplate?.root["Folders"]["CourseFolder"]["CourseNameRef"]["Id"]
@@ -74,7 +81,19 @@ let xmlTCXoutput = AEXMLDocument()
 let trainingCenterDatabase = xmlTCXoutput.addChild(name: (xmlTCXtemplate?.root.name)!, attributes:(xmlTCXtemplate?.root.attributes)!)
 
 let folders = trainingCenterDatabase.addChild(foldersTemplate!)
-folders["Courses"]["CourseFolder"]["CourseNameRef"]["Id"].value = name
+let trkName = xmlGPX?.root["trk"]["name"].value
+folders["Courses"]["CourseFolder"]["CourseNameRef"]["Id"].value = trkName
+
+let lap = trainingCenterDatabase.addChild(name:"Courses").addChild(name:"Course").addChild(lapTemplate!)
+
+let beginPosition = xmlGPX?.root["trk"]["trkseg"]["trkpt"].first?.attributes
+let endPosition = xmlGPX?.root["trk"]["trkseg"]["trkpt"].last?.attributes
+
+lap["BeginPosition"]["LatitudeDegrees"].value = beginPosition?["lat"]
+lap["BeginPosition"]["LongitudeDegrees"].value = beginPosition?["lon"]
+lap["EndPosition"]["LatitudeDegrees"].value = endPosition?["lat"]
+lap["EndPosition"]["LongitudeDegrees"].value = endPosition?["lon"]
+
 
 // prints the same XML structure as original
 print(xmlTCXoutput.xml)
