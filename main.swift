@@ -92,13 +92,35 @@ func readXML(_ fullPath: String) -> AEXMLDocument?{
     return nil
 }
 
+//print(CommandLine.arguments)
 
 
+if CommandLine.arguments.count < 2 {
+    print("Usage: GPX2TCX [.gpx file name]")
+    exit(0)
+}
 
-let fullPath = "file:///Users/chanbill/Desktop/GPX2TCX/2017-07-28_20218653_birkholzer-chaussee-blumberg-birkholz-loop-from-senefelderplatz_export.gpx"
+let inputFile = CommandLine.arguments[1]
+
+let outputFile = inputFile.replacingOccurrences(of: ".gpx", with: "") + ".tcx"
+
+// Create a FileManager instance
+
+let fileManager = FileManager.default
+
+// Get current directory path
+
+let path = fileManager.currentDirectoryPath
+//print(path)
+
+
+let fullPath = "file://" + path + "/" + inputFile
+print(fullPath)
 
 let fullPathTCXTemplate = "file:///Users/chanbill/Desktop/GPX2TCX/template.tcx"
-let fullPathTCXOutput = "file:///Users/chanbill/Desktop/GPX2TCX/output.tcx"
+let fullPathTCXOutput = "file://" + path + "/" + outputFile
+
+
 
 let xmlGPX = readXML(fullPath)
 let xmlTCXtemplate = readXML(fullPathTCXTemplate)
